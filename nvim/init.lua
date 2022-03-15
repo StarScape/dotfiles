@@ -22,6 +22,9 @@ vim.opt.mouse = 'a'
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
+-- Blink block cursor in N mode
+vim.api.nvim_exec('set guicursor+=n:blinkon100', false)
+
 -- MAPPINGS
 local map = function(mode, key, result, opts)
   opts = opts or {}

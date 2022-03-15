@@ -1,7 +1,7 @@
 # Brew packages
 brew install neovim \
-  clojure/tools/clojure clojure-lsp ripgrep node \
-  lazygit
+  git clojure/tools/clojure clojure-lsp ripgrep \
+  node lazygit
 
 # NPM packages
 npm install -g shadow-cljs
