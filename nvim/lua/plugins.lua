@@ -14,8 +14,10 @@ return require('packer').startup(function(use)
   -- dir and uninstall it, thinking it's not being used since it is not registered here
   use 'wbthomason/packer.nvim'
 
+  -- Themes
   use 'marko-cerovac/material.nvim'
-  use 'jiangmiao/auto-pairs'
+
+  -- GUI/Telescope/LSP
   use 'nvim-lua/popup.nvim'
   use {
     'nvim-telescope/telescope.nvim',
@@ -23,7 +25,8 @@ return require('packer').startup(function(use)
   }
   use 'jremmen/vim-ripgrep'
   use 'neovim/nvim-lspconfig'
-  use 'hrsh7th/nvim-cmp'
+  use 'nvim-lua/completion-nvim'
+  -- use 'hrsh7th/nvim-cmp'
   -- use 'beauwilliams/statusline.lua'
 
   -- Language stuff
@@ -31,13 +34,15 @@ return require('packer').startup(function(use)
   use 'junegunn/rainbow_parentheses.vim'
   use 'Olical/conjure'
 
+  -- QOL stuff
+  use 'justinmk/vim-sneak'
+  use 'jiangmiao/auto-pairs'
+
   -- God bless Tim Pope
   use 'tpope/vim-surround'
   use 'tpope/vim-commentary'
   use 'tpope/vim-fugitive'
   use 'tpope/vim-sleuth'
-
-  use 'eraserhd/parinfer-rust'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
