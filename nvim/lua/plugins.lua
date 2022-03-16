@@ -17,26 +17,47 @@ return require('packer').startup(function(use)
   -- Themes
   use 'marko-cerovac/material.nvim'
 
-  -- GUI/Telescope/LSP
+  -- GUI/Telescope
   use 'nvim-lua/popup.nvim'
   use {
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
   use 'jremmen/vim-ripgrep'
-  use 'neovim/nvim-lspconfig'
-  use 'nvim-lua/completion-nvim'
-  -- use 'hrsh7th/nvim-cmp'
   -- use 'beauwilliams/statusline.lua'
 
   -- Language stuff
-  use 'clojure-vim/clojure.vim'
+  use 'clojure-vim/clojure.vim' -- (loading conjure before lsp-zero so it doesn't override K mapping)
   use 'junegunn/rainbow_parentheses.vim'
   use 'Olical/conjure'
+
+  -- LSP
+  use {
+    'VonHeikemen/lsp-zero.nvim',
+    requires = {
+      -- LSP Support
+      {'neovim/nvim-lspconfig'},
+      {'williamboman/nvim-lsp-installer'},
+
+      -- Autocompletion
+      {'hrsh7th/nvim-cmp'},
+      {'hrsh7th/cmp-buffer'},
+      {'hrsh7th/cmp-path'},
+      {'saadparwaiz1/cmp_luasnip'},
+      {'hrsh7th/cmp-nvim-lsp'},
+      {'hrsh7th/cmp-nvim-lua'},
+      {'PaterJason/cmp-conjure'},
+
+      -- Snippets
+      {'L3MON4D3/LuaSnip'},
+      {'rafamadriz/friendly-snippets'},
+    }
+  }
 
   -- QOL stuff
   use 'justinmk/vim-sneak'
   use 'jiangmiao/auto-pairs'
+  -- use 'liuchengxu/vim-which-key'
 
   -- God bless Tim Pope
   use 'tpope/vim-surround'
